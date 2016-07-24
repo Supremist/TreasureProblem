@@ -17,11 +17,17 @@ public:
     std::shared_ptr<vector<int>> get_path();
 
 private:
-    int depth_search(vector<int> & current_keys, vector<bool> & is_visited, int last_chest = -2);
+    int depth_search(const vector<int> & current_keys, const vector<bool> & is_visited, int last_chest = -2);
+    vector<int> get_openable_chests(int key, const vector<bool> & is_visited);
+    void calc_priority();
+    vector<int> get_all_keys(const vector<int> & start_keys);
+
     vector<vector <int>> m_chests;
     vector<vector <int>> m_keys;
     vector<int> m_previous_chests;
     int m_last_chest;
+    vector<int> m_chests_priority;
+    vector<int> m_needed_keys;
 };
 
 #endif // CASESOLVER_H

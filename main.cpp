@@ -61,7 +61,7 @@ int main(int argc, char *argv[])
 {
     std::ifstream input;
     std::ofstream out;
-    input.open("super_small.txt");
+    input.open("large.txt");
     out.open("output.txt");
     int case_count;
     input >> case_count;
